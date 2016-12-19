@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.net.URL;
+
 /**
  * Created by mohamedsherif on 12/18/16.
  */
@@ -16,7 +18,7 @@ public class Main extends Application{
         /*
          * Main Stage Initialization
          */
-        Parent root = FXMLLoader.load(getClass().getResource("com/gui/fxml/"));
+        Parent root = FXMLLoader.load(getClass().getResource("com/gui/fxml/MainView.fxml"));
         primaryStage.setScene(new Scene(root,800,800));
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
