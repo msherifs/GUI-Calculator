@@ -7,7 +7,7 @@ public class Binary extends NumberType {
 
     public Binary(String binaryValue){
         this.value = binaryValue;
-        
+
     }
     public Binary(int decimalValue){
         this.decimalRepresentaion = decimalValue;
