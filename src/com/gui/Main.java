@@ -1,5 +1,7 @@
 package com.gui;
 
+import com.calculator.number_system_converter.Hexadecimal;
+import com.calculator.number_system_converter.NumberType;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

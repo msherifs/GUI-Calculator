@@ -6,8 +6,12 @@ package com.calculator.number_system_converter;
 public abstract class NumberType {
     protected String value;
     protected int decimalRepresentaion;
-    protected abstract void convertToDecimal();
-    public String getValueString(){
+
+    public String getValue() {
         return value;
+    }
+
+    public int getDecimalRepresentaion() {
+        return decimalRepresentaion;
     }
 }

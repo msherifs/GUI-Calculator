@@ -10,6 +10,6 @@ public class ConvertBinary extends NumberSystemConverter {
 
     @Override
     public NumberType convert(){
-
+        return new Binary(number.decimalRepresentaion);
     }
 }
