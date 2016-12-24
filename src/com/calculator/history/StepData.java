@@ -32,10 +32,11 @@ public class StepData {
         this.savedString = (this.num1 + "," + this.conversionFrom + "," + this.conversionTO + "," + this.operationMade.name());
     }
 
-    public StepData(Equation e) {
+    public StepData(Equation e, Operation op) {
         //msh hn3rf n7dyd solving wla plotting fl constructor , el controller hwa ely hy7dyd w hy += (underscore + no3 el operation(plotting wla solving))
         this.equation = e;
         this.savedString = "" + e.toString();
+        this.operationMade = op;
     }
 
     public StepData(ArrayList<Equation> a) {
@@ -48,7 +49,6 @@ public class StepData {
         this.savedString += this.operationMade;
 
     }
-
 
     public Operation getOperationMade() {
         return this.operationMade;

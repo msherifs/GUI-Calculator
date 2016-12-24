@@ -1,11 +1,20 @@
 package com.gui.controllers;
 
 import com.gui.Main;
+import com.jfoenix.controls.JFXDrawer;
+import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by mohamedsherif on 12/19/16.
@@ -13,12 +22,33 @@ import javafx.stage.Stage;
 public class MainViewController {
     @FXML AnchorPane decorationPanel;
     @FXML AnchorPane mainPanel;
+    @FXML JFXHamburger hamburger;
+    @FXML JFXDrawer drawer;
     private double xOffset;
     private double yOffset;
     Stage mainStage;
     public void initialize(){
+        decorationPanel.toFront();
+        try {
+            VBox box = FXMLLoader.load(getClass().getResource("DrawerPane.fxml"));
+            drawer.setSidePane(box);
+        } catch (IOException ex) {
+        }
 
-//        mainStage = (Stage) decorationPanel.getScene().getWindow();
+
+
+        HamburgerBackArrowBasicTransition transition = new HamburgerBackArrowBasicTransition(hamburger);
+        transition.setRate(-1);
+        hamburger.addEventHandler(MouseEvent.MOUSE_PRESSED,(e)->{
+            transition.setRate(transition.getRate()*-1);
+            transition.play();
+
+            if(drawer.isShown())
+            {
+                drawer.close();
+            }else
+                drawer.open();
+        });
         decorationPanel.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {

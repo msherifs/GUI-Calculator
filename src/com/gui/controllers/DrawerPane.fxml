@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="194.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label prefHeight="35.0" prefWidth="194.0" style="-fx-background-color: #69F0AE;" />
+      <JFXButton prefHeight="81.0" prefWidth="193.0" style="-fx-background-color: #69F0AE; -fx-background-radius: 0;" text="Arthimatic Operations" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton prefHeight="85.0" prefWidth="193.0" style="-fx-background-color: #69F0AE; -fx-background-radius: 0;" text="Unit Converter" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton prefHeight="85.0" prefWidth="193.0" style="-fx-background-color: #69F0AE; -fx-background-radius: 0;" text="Number System Converter" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton prefHeight="85.0" prefWidth="193.0" style="-fx-background-color: #69F0AE; -fx-background-radius: 0;" text="Equation Plotter" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton prefHeight="85.0" prefWidth="193.0" style="-fx-background-color: #69F0AE; -fx-background-radius: 0;" text="Linear Solver" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton prefHeight="85.0" prefWidth="193.0" style="-fx-background-color: #69F0AE; -fx-background-radius: 0;" text="History" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton prefHeight="85.0" prefWidth="193.0" style="-fx-background-color: #69F0AE; -fx-background-radius: 0;" text="Exit" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</VBox>

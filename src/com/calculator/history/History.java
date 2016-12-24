@@ -1,5 +1,6 @@
 package com.calculator.history;
 
+import com.calculator.equation.Coefficient;
 import com.calculator.equation.Equation;
 
 import java.util.ArrayList;
@@ -46,28 +47,23 @@ public class History {
 
                 }
                 if (line.contains("SOLVINGONE") || line.contains("PLOTTING")) {
-                    List<String> data = Arrays.asList(line.split(","));
-                    double[] a = new double[3];
-                    for (int i = 0; i < 3; i++) {
-                        a[i] = Double.parseDouble(data.get(i));
+                    List<String> coefficientArray = Arrays.asList(line.split("_"));
+                    ArrayList<Coefficient> ready = new ArrayList<Coefficient>();
+                    for (String eq : coefficientArray) {
+                        List<String> equationsCoeff = Arrays.asList(line.split(","));
+                        ready.add(new Coefficient(Double.parseDouble(equationsCoeff.get(0)), Integer.parseInt(equationsCoeff.get(1))));
+                        history.add(new StepData(new Equation(ready),Operation.ARTHIMATIC));
                     }
-
-                    history.add(new StepData(new Equation(a)));
-
                 }
 
 
                 if (line.contains("SOLVINGMANY")) {
-                    List<String> equationsToStrings = Arrays.asList(line.split("_"));
-                    for (String eq : equationsToStrings
-                            ) {
+                    List<String> coefficientArray = Arrays.asList(line.split("_"));
+                    ArrayList<Coefficient> ready = new ArrayList<Coefficient>();
+                    for (String eq : coefficientArray) {
                         List<String> equationsCoeff = Arrays.asList(line.split(","));
-                        double[] a = new double[3];
-                        for (int i = 0; i < 3; i++) {
-                            a[i] = Double.parseDouble(equationsCoeff.get(i));
-                        }
-
-                        history.add(new StepData(new Equation(a)));
+                        ready.add(new Coefficient(Double.parseDouble(equationsCoeff.get(0)), Integer.parseInt(equationsCoeff.get(1))));
+                        history.add(new StepData(new Equation(ready),Operation.ARTHIMATIC));
                     }
 
 

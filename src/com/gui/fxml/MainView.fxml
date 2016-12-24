@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="mainPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #3F51B5;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.controllers.MainViewController">
    <children>
-      <AnchorPane fx:id="decorationPanel" layoutY="2.0" opacity="0.2" prefHeight="35.0" prefWidth="800.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="decorationPanel" layoutY="2.0" opacity="0.3" prefHeight="35.0" prefWidth="800.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label layoutX="352.0" layoutY="5.0" text="Calculator" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" layoutX="757.0" onAction="#exitApplication" prefHeight="35.0" prefWidth="36.0" text="X" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </JFXButton>
+            <JFXHamburger fx:id="hamburger" layoutX="727.0" layoutY="8.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: ffffff;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children></AnchorPane>
+      <JFXDrawer fx:id="drawer" defaultDrawerSize="194.0" overLayVisible="false" prefHeight="600.0" prefWidth="194.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>

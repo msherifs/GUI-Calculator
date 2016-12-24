@@ -1,76 +1,57 @@
 package com.calculator.equation;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Equation {
+    //CHANGED IMPLEMENTATION BECAUSE THIS IS A LINEAR EQUATION NOT GENERAL EQUATION
 
-    private double[] oneVarQuadricCoefficients = new double[3];
-    private double xCoefficient;
-    private double yCoefficient;
-    private double zCoefficient;
-    private double constant;
-    private String equationFormula; // note that this string won't be showed to the user
+    private ArrayList<Coefficient> equation = new ArrayList<Coefficient>();
 
-
-    public Equation(double a, double b, double c, double f) {
-
-        this.xCoefficient = a;
-        this.yCoefficient = b;
-        this.zCoefficient = c;
-        this.constant = f;
-        this.equationFormula = "  " + a + " , " + b + " , " + c + " , " + f;
-
+    public Equation(Coefficient [] coefficientsArray){
+        equation.addAll(Arrays.asList(coefficientsArray));
     }
 
-    public Equation(double[] a) {
-        this.oneVarQuadricCoefficients = a;
-        this.equationFormula = "  " + a[0] + " , " + a[1] + " , " + a[2];
-
+    public Equation(ArrayList<Coefficient> coefficientArrayList){
+        equation.addAll(coefficientArrayList);
     }
 
-    public double getxCoefficient() {
-        return this.xCoefficient;
+    public void addCoefficient(double value, int power){
+        equation.add(new Coefficient(value, power));
     }
 
-    public void setxCoefficient(double a) {
-        this.xCoefficient = a;
+    public double evaluateHigherDegree(double valueOfVariable){
+        double value = 0;
+        for (Coefficient c : equation){
+            value += Math.pow(c.getValue(),(double)c.getPower());
+        }
+        return value;
     }
 
-    public double getyCoefficient() {
-        return this.yCoefficient;
+    public double evaluateLinear(double [] valueOfVariables){
+        double value = 0;
+        if(valueOfVariables.length != equation.size()){
+            return -1.1; // we should replace the if condition with exception
+        }
+        for (int i = 0 ; i < valueOfVariables.length ; i++){
+            value += (equation.get(i).getValue() * valueOfVariables[i]) ;
+        }
+        return value;
     }
 
-    public void setyCoefficient(double a) {
-        this.yCoefficient = a;
+    public ArrayList<Coefficient> getEquation() {
+        return equation;
     }
-
-    public double getzCoefficient() {
-        return this.zCoefficient;
-    }
-
-    public void setzCoefficient(double a) {
-        this.zCoefficient = a;
-    }
-
-    public double getConstant() {
-        return this.constant;
-    }
-
-    public void setConstant(double a) {
-        this.constant = a;
-    }
-
-    public double[] getOneVarQuadricCoefficients() {
-        return this.oneVarQuadricCoefficients;
-    }
-
-    public void setOneVarQuadricCoefficients(double[] a) {
-        this.oneVarQuadricCoefficients = a;
-
-    }
-
 
     public String toString() {
-        return this.equationFormula;
+        String fString = "";
+        for (int i = 0 ; i < equation.size() ; i++){
+            fString += equation.get(i).getValue() + "," + equation.get(i).getPower();
+            if (i != equation.size()-1 ){
+                fString += "_";
+            }
+        }
+        return fString;
     }
-
 }
