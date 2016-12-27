@@ -11,40 +11,42 @@ public class StepData {
     private double num2;
     private Equation equation; // in case of solving one equation and returning a point or plotting an equation
     private ArrayList<Equation> equationsToBeSolvedTogether = new ArrayList();
-    private String conversionFrom;
-    private String conversionTO;
-    private String arthimaticOperationMade;
+    private String hexaString;
     private String savedString; // note that this string won't be showed to the user
-
-    public StepData(double firstOperand, double secondOperand, String arthimaticOperationMade) {
-        this.operationMade = Operation.ARTHIMATIC;
+ int i =0 ;
+    public StepData(double firstOperand, double secondOperand, Operation operation) {
         this.num1 = firstOperand;
         this.num2 = secondOperand;
-        this.arthimaticOperationMade = arthimaticOperationMade;
-        this.savedString = (this.num1 + "," + this.num2 + "," + this.arthimaticOperationMade + "," + this.operationMade.name());
+        this.operationMade= operation;
+        this.savedString = (this.num1 + "," + this.num2 + ","  + this.operationMade.name());
     }
 
-    public StepData(double num1, String conversionFrom, String conversionTO) {
-        this.operationMade = Operation.CONVERTING;
+    public StepData(double num1,Operation a) {
         this.num1 = num1;
-        this.conversionTO = conversionTO;
-        this.conversionFrom = conversionFrom;
-        this.savedString = (this.num1 + "," + this.conversionFrom + "," + this.conversionTO + "," + this.operationMade.name());
+       this.operationMade = a ;
+        this.savedString = (this.num1 + "," + this.operationMade.name());
+    }
+    public StepData(String num1,Operation a) {
+        this.hexaString = num1;
+        this.operationMade = a ;
+        this.savedString = (this.num1 + "," +  this.operationMade.name());
     }
 
     public StepData(Equation e, Operation op) {
-        //msh hn3rf n7dyd solving wla plotting fl constructor , el controller hwa ely hy7dyd w hy += (underscore + no3 el operation(plotting wla solving))
         this.equation = e;
-        this.savedString = "" + e.toString();
+        this.savedString = "" + e.toString() + op.name();
         this.operationMade = op;
     }
 
-    public StepData(ArrayList<Equation> a) {
-        this.operationMade = Operation.SOLVINGMANY;
+    public StepData(ArrayList<Equation> a , Operation op) {
         this.equationsToBeSolvedTogether = a;
-
+        this.operationMade=op ;
         for (Equation e : equationsToBeSolvedTogether) {
-            this.savedString += (e.toString() + "_");
+            i++;
+            this.savedString += (e.toString() );
+            if (i != equationsToBeSolvedTogether.size()-1 ){
+                this.savedString += "_";
+            }
         }
         this.savedString += this.operationMade;
 
@@ -54,9 +56,6 @@ public class StepData {
         return this.operationMade;
     }
 
-    public void setOperationMade(Operation op) {
-        this.operationMade = op;
-    }
 
     public double getNum1() {
         return this.num1;
@@ -82,29 +81,6 @@ public class StepData {
         this.equation = e;
     }
 
-    public String getConversionFrom() {
-        return this.conversionFrom;
-    }
-
-    public void setConversionFrom(String s) {
-        this.conversionFrom = s;
-    }
-
-    public String getConversionTO() {
-        return this.conversionTO;
-    }
-
-    public void setConversionTO(String s) {
-        this.conversionTO = s;
-    }
-
-    public String getArthimaticOperationMade() {
-        return this.arthimaticOperationMade;
-    }
-
-    public void setArthimaticOperationMade(String s) {
-        this.arthimaticOperationMade = s;
-    }
 
     public ArrayList<Equation> getStringList() {
         return this.equationsToBeSolvedTogether;
