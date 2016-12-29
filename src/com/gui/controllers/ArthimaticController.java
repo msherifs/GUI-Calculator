@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-public class ArthimaticController {
+public class ArthimaticController implements ControlledScreen {
 
     @FXML
     private JFXTextField output;
@@ -14,6 +14,7 @@ public class ArthimaticController {
     private double number1 = 0;
     private String operator = "";
     private boolean start = true;
+    ScreensController myScreen;
 
     private ArthimaticOperations calculator = new ArthimaticOperations();
 
@@ -48,5 +49,15 @@ public class ArthimaticController {
             operator = "";
             start = true;
         }
+    }
+
+    @FXML
+    public void returnMainView(){
+        myScreen.setScreen("MainView");
+    }
+
+    @Override
+    public void setScreenParent(ScreensController screenPage) {
+        myScreen = screenPage;
     }
 }

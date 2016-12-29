@@ -1,29 +1,23 @@
 package com.gui.controllers;
 
-import com.gui.Main;
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Created by mohamedsherif on 12/19/16.
  */
-public class MainViewController {
+public class MainViewController implements ControlledScreen{
     @FXML
     AnchorPane decorationPanel;
     @FXML
@@ -32,7 +26,10 @@ public class MainViewController {
     JFXHamburger hamburger;
     @FXML
     JFXDrawer drawer;
+    @FXML
+    StackPane stackPane;
     VBox box;
+    ScreensController myScreen;
 
 
     private double xOffset;
@@ -41,12 +38,12 @@ public class MainViewController {
 
     public void initialize() {
         decorationPanel.toFront();
+
         try {
             box = FXMLLoader.load(getClass().getResource("DrawerPane.fxml"));
             drawer.setSidePane(box);
         } catch (IOException ex) {
         }
-
 
         HamburgerBackArrowBasicTransition transition = new HamburgerBackArrowBasicTransition(hamburger);
         transition.setRate(-1);
@@ -64,6 +61,13 @@ public class MainViewController {
             @Override
             public void handle(MouseEvent event) {
                 arthimaticButtonPressed();
+            }
+        });
+
+        box.getChildren().get(7).setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                exitApplication();
             }
         });
 
@@ -87,14 +91,16 @@ public class MainViewController {
     }
 
     public void arthimaticButtonPressed() {
-        try {
-            decorationPanel = FXMLLoader.load(getClass().getResource("Arthimatic.fxml"));
-        } catch (IOException ex) {
-        }
-
+        drawer.close();
+        myScreen.setScreen("Arthimatic");
     }
 
     public void exitApplication() {
         System.exit(0);
+    }
+
+    @Override
+    public void setScreenParent(ScreensController screenPage) {
+        myScreen = screenPage;
     }
 }

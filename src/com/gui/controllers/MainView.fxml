@@ -17,6 +17,11 @@
             </Label>
             <JFXHamburger fx:id="hamburger" layoutX="727.0" layoutY="8.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: ffffff;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children></AnchorPane>
+      <Label alignment="CENTER" layoutX="26.0" layoutY="135.0" prefHeight="157.0" prefWidth="750.0" text="Please Choose The Desired Operation From the Drawer" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
       <JFXDrawer fx:id="drawer" defaultDrawerSize="194.0" overLayVisible="false" prefHeight="600.0" prefWidth="194.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>
