@@ -26,6 +26,7 @@ public class Main extends Application{
         mainScreen = new ScreensController();
         mainScreen.loadScreen("MainView","MainView.fxml");
         mainScreen.loadScreen("Arthimatic", "Arthimatic.fxml");
+        mainScreen.loadScreen("Plotting", "EquationPlotter.fxml");
         mainScreen.setScreen("MainView");
         Group root = new Group();
         root.getChildren().addAll(mainScreen);
