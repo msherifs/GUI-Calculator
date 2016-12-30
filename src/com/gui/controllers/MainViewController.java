@@ -70,6 +70,13 @@ public class MainViewController implements ControlledScreen{
                 myScreen.setScreen("Plotting");
             }
         });
+        box.getChildren().get(3).setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                myScreen.setScreen("Unit");
+            }
+        });
+
 
         box.getChildren().get(5).setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
