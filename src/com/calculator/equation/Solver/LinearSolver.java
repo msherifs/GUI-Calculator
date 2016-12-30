@@ -19,6 +19,7 @@ public class LinearSolver {
             A[i][0] =  a.getEquation().get(j++).getValue();
             A[i][1] =  a.getEquation().get(j++).getValue();
             A[i][2] =  a.getEquation().get(j++).getValue();
+
             Z[i] = a.getEquation().get(j).getValue();
             i++;
             j = 0;
@@ -26,10 +27,9 @@ public class LinearSolver {
     }
 
 
-    public double[] solve(){
+    public Matrix solve(){
         Matrix eqMatrix = new Matrix(A);
         Matrix anMatrix = new Matrix(Z,3);
-        Matrix sol = anMatrix.solve(eqMatrix);
-        return sol.getColumnPackedCopy();
+        return eqMatrix.solve(anMatrix);
     }
 }

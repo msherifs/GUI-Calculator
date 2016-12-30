@@ -71,6 +71,13 @@ public class MainViewController implements ControlledScreen{
             }
         });
 
+        box.getChildren().get(5).setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                myScreen.setScreen("LinearSolver");
+            }
+        });
+
         box.getChildren().get(7).setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {

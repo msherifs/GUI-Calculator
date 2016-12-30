@@ -1,5 +1,6 @@
 package com.gui.controllers;
 
+import Jama.Matrix;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -27,6 +28,7 @@ public class Main extends Application{
         mainScreen.loadScreen("MainView","MainView.fxml");
         mainScreen.loadScreen("Arthimatic", "Arthimatic.fxml");
         mainScreen.loadScreen("Plotting", "EquationPlotter.fxml");
+        mainScreen.loadScreen("LinearSolver", "LinearSolver.fxml");
         mainScreen.setScreen("MainView");
         Group root = new Group();
         root.getChildren().addAll(mainScreen);
@@ -41,6 +43,19 @@ public class Main extends Application{
     }
 
     public static void main(String[] args) {
+        double[][] lhsArray = {{3, 2, -1}, {2, -2, 4}, {-1, 0.5, -1}};
+        double[] rhsArray = {1, -2, 0};
+        //Creating Matrix Objects with arrays
+        Matrix lhs = new Matrix(lhsArray);
+        Matrix rhs = new Matrix(rhsArray, 3);
+        //Calculate Solved Matrix
+        Matrix ans = lhs.solve(rhs);
+        //Printing Answers
+        System.out.println("x = " + (ans.get(0, 0)));
+        System.out.println("y = " + (ans.get(1, 0)));
+        System.out.println("z = " + (ans.get(2, 0)));
+
+
         launch(args);
     }
 }
