@@ -42,6 +42,7 @@ public class MainViewController implements ControlledScreen{
         try {
             box = FXMLLoader.load(getClass().getResource("DrawerPane.fxml"));
             drawer.setSidePane(box);
+
         } catch (IOException ex) {
         }
 
@@ -70,10 +71,16 @@ public class MainViewController implements ControlledScreen{
                 myScreen.setScreen("Plotting");
             }
         });
-        box.getChildren().get(3).setOnMouseClicked(new EventHandler<MouseEvent>() {
+        box.getChildren().get(2).setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 myScreen.setScreen("Unit");
+            }
+        });
+        box.getChildren().get(3).setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                myScreen.setScreen("NumberSystem");
             }
         });
 

@@ -29,13 +29,15 @@ public class Main extends Application{
         mainScreen.loadScreen("Arthimatic", "Arthimatic.fxml");
         mainScreen.loadScreen("Plotting", "EquationPlotter.fxml");
         mainScreen.loadScreen("LinearSolver", "LinearSolver.fxml");
+        mainScreen.loadScreen("Unit","unitConverter.fxml");
+        mainScreen.loadScreen("NumberSystem","numberSystem.fxml");
         mainScreen.setScreen("MainView");
         Group root = new Group();
         root.getChildren().addAll(mainScreen);
         Scene scene = new Scene(root, 800, 600);
         scene.setFill(new Color(0.247,0.318,0.71,1));
         primaryStage.setScene(scene);
-        //primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
         mainStagePosX = primaryStage.getX();
         mainStagePosY = primaryStage.getY();

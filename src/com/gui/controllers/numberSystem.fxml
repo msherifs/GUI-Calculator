@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #C62828;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.controllers.unitConverterController">
+<AnchorPane fx:id="mainPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #0277BD;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.controllers.numberSystemController">
     <children>
         <AnchorPane fx:id="decorationPanel" layoutY="2.0" opacity="0.3" prefHeight="35.0" prefWidth="800.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -22,9 +22,9 @@
         <JFXDrawer fx:id="drawer" defaultDrawerSize="194.0" overLayVisible="false" prefHeight="600.0" prefWidth="194.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
         <BorderPane prefHeight="600.0" prefWidth="800.0">
             <bottom>
-                <AnchorPane prefHeight="79.0" prefWidth="800.0" style="-fx-background-color: #D32F2F;" BorderPane.alignment="CENTER">
+                <AnchorPane prefHeight="79.0" prefWidth="800.0" style="-fx-background-color: #01579B;" BorderPane.alignment="CENTER">
                     <children>
-                        <JFXButton layoutX="14.0" layoutY="16.0" onAction="#returnMainView" prefHeight="47.0" prefWidth="88.0" style="-fx-background-color: #FF9800;" text="Back">
+                        <JFXButton layoutX="14.0" layoutY="16.0" onAction="#returnMainView" prefHeight="47.0" prefWidth="88.0" style="-fx-background-color: #69F0AE;" text="Back">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -32,22 +32,22 @@
                     </children>
                 </AnchorPane>
             </bottom>
-         <center>
+            <center>
                 <AnchorPane prefHeight="519.0" prefWidth="800.0" BorderPane.alignment="CENTER">
                     <children>
-                        <JFXTextField fx:id="theNumber" focusColor="WHITE" labelFloat="true" layoutX="228.0" layoutY="90.0" maxWidth="387.0" minWidth="355.0" prefHeight="85.0" prefWidth="376.0" unFocusColor="BLACK">
+                        <JFXTextField fx:id="theNumber" alignment="CENTER" focusColor="WHITE" layoutX="228.0" layoutY="90.0" maxWidth="387.0" minWidth="355.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="85.0" prefWidth="376.0" unFocusColor="BLACK">
                             <font>
                                 <Font name="Nunito Sans Regular" size="38.0" />
                             </font>
                         </JFXTextField>
-                  <JFXButton buttonType="RAISED" layoutX="319.0" layoutY="364.0" onAction="#convert" prefHeight="100.0" prefWidth="194.0" style="-fx-background-color: #FF9800;" text="Convert">
-                     <font>
-                        <Font name="Nunito Sans Regular" size="34.0" />
-                     </font></JFXButton>
-                  <JFXComboBox fx:id="choosenOperation" layoutX="252.0" layoutY="236.0" prefHeight="50.0" prefWidth="328.0" promptText="Needed conversion" />
+                        <JFXButton buttonType="RAISED" layoutX="319.0" layoutY="364.0" onAction="#convert" prefHeight="100.0" prefWidth="194.0" style="-fx-background-color: #69F0AE;" text="Convert">
+                            <font>
+                                <Font name="Nunito Sans Regular" size="34.0" />
+                            </font></JFXButton>
+                        <JFXComboBox fx:id="choosenOperation" layoutX="252.0" layoutY="236.0" prefHeight="50.0" prefWidth="328.0" promptText="Needed conversion" />
                     </children>
                 </AnchorPane>
-         </center>
+            </center>
         </BorderPane>
     </children>
 </AnchorPane>

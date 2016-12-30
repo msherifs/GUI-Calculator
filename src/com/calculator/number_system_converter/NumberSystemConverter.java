@@ -5,5 +5,5 @@ package com.calculator.number_system_converter;
  */
 public abstract class NumberSystemConverter {
     protected NumberType number;
-    public abstract NumberType convert();
+    public abstract NumberType convert(NumberType a);
 }
