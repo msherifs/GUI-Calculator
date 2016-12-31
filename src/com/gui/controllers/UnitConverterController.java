@@ -9,7 +9,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 
-public class unitConverterController implements ControlledScreen {
+public class UnitConverterController implements ControlledScreen {
 
     @FXML
     JFXTextField theNumber ;

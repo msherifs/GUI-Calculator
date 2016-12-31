@@ -13,7 +13,7 @@ public class StepData {
     private ArrayList<Equation> equationsToBeSolvedTogether = new ArrayList();
     private String hexaString;
     private String savedString; // note that this string won't be showed to the user
- int i =0 ;
+    int i =0 ;
     public StepData(double firstOperand, double secondOperand, Operation operation) {
         this.num1 = firstOperand;
         this.num2 = secondOperand;
